@@ -63,3 +63,16 @@ And, then
 You try to run migrations follow this command
 
 `python manage.py makemigrations {your-module}`
+
+## Validation UserModel
+
+This example:
+
+```python
+def create_user(self, email, password=None, **extra_fields):
+        ...
+        if not email:
+            raise ValueError('User must have an email address.')
+        ...
+```
+
